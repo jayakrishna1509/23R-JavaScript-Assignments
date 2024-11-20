@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators in JS</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1Dtwb6sPtb1Bgw-H-5OjyStfgGPssrCrZ/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+      <div class="code-section">
+        <h2>Operators in JavaScript</h2>
+        <div class="code-block">
+          <pre class="code">
+<span class="input">1. Check if a Number is Even or Odd
+    Question:
+    Write a JavaScript program that prompts the user to enter a number and 
+    alerts "Even" if the number is even, or "Odd" if the number is odd. Use the 
+    modulus operator % to check if the number is divisible by 2.
+    Input (via prompt):
+    Enter a number: 7
+    Expected Output (via alert):
+    "Odd"
+    Input (via prompt):
+    Enter a number: 10
+    Expected Output (via alert):
+    "Even"
+    var num = +prompt ("Enter a number:");
+if (num % 2 === 0) {
+alert("Even"); // 10
+// alert(`${num} is Even`); // 2 is Even
+} else {
+alert("Odd"); // 7
+// alert(`${num} is Odd`); // 9 is Odd
+}
+</span>
+<span class="comment">A: Output:
+// Enter a number
+// 7
+// 9 is Odd
+// 10
+// 2 is Even</span>
+
+<span class="input">2. Compare Two Numbers
+    Question:
+    Write a JavaScript program that prompts the user to enter two numbers and 
+    alerts:
+    • "Greater" if the first number is greater than the second,
+    • "Equal" if both numbers are equal,
+    • "Smaller" if the first number is smaller than the second.
+    Input (via prompt):
+    Enter the first number: 10
+    Enter the second number: 5
+    Expected Output (via alert):
+    "Greater"
+    Input (via prompt):
+    Enter the first number: 7
+    Enter the second number: 7
+    Expected Output (via alert):
+    "Equal"
+    var num1 = +prompt ("Enter the first number:");
+var num2 = +prompt ("Enter the second number:");
+if (num1 > num2) {
+alert("Greater");
+} else if (num1 == num2) {
+alert("Equal");
+} else {
+alert("Smaller");
+}
+</span>
+<span class="comment">A: Output:
+// Enter the first number: 10
+// Enter the second number: 5
+// "Greater"
+// Enter the first number: 7
+// Enter the second number: 7
+// "Equal"</span>
+
+<span class="input">3. Driving Eligibility Check
+    Question:
+    Write a JavaScript program that prompts the user to enter their age and 
+    whether they have a valid driver's license (true or false). The program 
+    should alert "Can drive" if the person is 18 or older and has a valid 
+    driver's license, otherwise it should alert "Cannot drive."
+    Input (via prompt):
+    Enter your age: 20
+    Do you have a valid driver's license (true/false): true
+    Expected Output (via alert):
+    "Can drive"
+    Input (via prompt):
+    Enter your age: 16
+    Do you have a valid driver's license (true/false): true
+    Expected Output (via alert):
+    "Cannot drive"
+    var age = prompt ("Enter your age:");
+var license = prompt (
+"Do you have a valid driver's license (true/false):"
+);
+if (age >= 18 && license === "true") {
+alert ("Can drive");
+} else {
+alert ("Cannot drive");
+}
+</span>
+<span class="comment">A: Output:
+// Enter your age: 20
+// Do you have a valid driver's license (true/false): true
+// Can drive
+// Enter your age:16
+// Do you have a valid driver's license (true/false): true
+// Cannot drive</span>
+
+
+
+<span class="input">4. Determine if a Number is Positive, Negative, or Zero
+    Question:
+    Write a JavaScript program that prompts the user to enter a number and 
+    alerts "Positive" if the number is greater than 0, "Negative" if the number
+    is less than 0,or "Zero" if the number is 0.
+    Input (via prompt):
+    Enter a number: 5
+    Expected Output (via alert):
+    "Positive"
+    Input (via prompt):
+    Enter a number: -3
+    Expected Output (via alert):
+    "Negative"
+    Input (via prompt):
+    Enter a number: 0
+    Expected Output (via alert):
+    "Zero"
+    var num = +prompt ("Enter a number: ");
+if (num > 0) {
+alert("Positive");
+} else if (num < 0) {
+alert("Negative");
+
+} else {
+alert("Zero");
+}
+</span>
+<span class="comment">A: Output:
+// Enter a number: 5
+// Positive
+// Enter a number: -3
+// Negative
+// Enter a number: 0
+// Zero</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

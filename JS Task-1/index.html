@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Variables</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1DHwpLMwW9f5NaAX-qgOnrf0Mc2EcohUM/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+
+      <div class="code-section">
+        <h2>Variables</h2>
+        <div class="code-block">
+          <pre class="code">
+<span class="input">1.What will be the output of this code?
+    console.log(x);
+    var x=5;
+    </span>
+<span class="comment">A:Output: undefined</span>
+
+<span class="input">2.What will be the output of this code?
+    console.log(a);
+    var a;
+    </span>
+<span class="comment">A:Output: undefined</span>
+
+<span class="input">3.What will be the output of this code?
+    console.log(b);
+    b=10;
+    var b;
+    </span>
+<span class="comment">A:Output: undefined</span>
+
+<span class="input">4.What will happen here?
+    console.log(c);
+    </span>
+<span class="comment">A:Reference Error: c is not defined</span>
+
+<span class="input">5.What will be the output of this code?
+    console.log(e);
+    var e=10;
+    console.log(e);
+    e=20;
+    console.log(e);
+    </span>
+<span class="comment">A:Output: undefined 10 20</span>
+
+<span class="input">6.What will be the output of this code?
+    console.log(f);
+    var f=100;
+    var f;
+    console.log(f);
+    </span>
+<span class="comment">A:Output: undefined 100</span>
+
+<span class="input">7.What will be the output of this code?
+    console.log(g);
+    var g=g+1;
+    console.log(g);
+    </span>
+<span class="comment">A:Output: undefined NaN</span>
+
+<span class="input">8.What will be the output of this code?
+    var h;
+    console.log(h);
+    h=50;
+    console.log(h);
+    </span>
+<span class="comment">A:Output: undefined 50</span>
+
+<span class="input">9.What will be the output of this code?
+    console.log(i);
+    i=10;
+    var i=5;
+    console.log(i);
+    </span>
+<span class="comment">A:Output: undefined 5</span>
+                </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

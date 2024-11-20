@@ -1,0 +1,147 @@
+<!-- Operators in JS -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators in JavaScript</title>
+  </head>
+  <body>
+    <h1>JavaScript Day-8 Assignment</h1>
+    <script>
+      // 1. Check if a Number is Even or Odd
+      // Question:
+      // Write a JavaScript program that prompts the user to enter a number and alerts "Even" if the number is even, or "Odd" if the number is odd. Use the modulus operator % to check if the number is divisible by 2.
+      // Input (via prompt):
+      // Enter a number: 7
+      // Expected Output (via alert):
+      // "Odd"
+      // Input (via prompt):
+      // Enter a number: 10
+      // Expected Output (via alert):
+      // "Even"
+      var num = +prompt("Enter a number:");
+      if (num % 2 === 0) {
+        alert("Even"); // 10
+        // alert(`${num} is Even`); // 2 is Even
+      } else {
+        alert("Odd"); // 7
+        // alert(`${num} is Odd`); // 9 is Odd
+      }
+      // Output: -
+      // Enter a number
+      // 7
+      // 9 is Odd
+      // 10
+      // 2 is Even
+
+      // 2. Compare Two Numbers
+      // Question:
+      // Write a JavaScript program that prompts the user to enter two numbers and alerts:
+      // • "Greater" if the first number is greater than the second,
+      // • "Equal" if both numbers are equal,
+      // • "Smaller" if the first number is smaller than the second.
+      // Input (via prompt):
+      // Enter the first number: 10
+      // Enter the second number: 5
+      // Expected Output (via alert):
+      // "Greater"
+      // Input (via prompt):
+      // Enter the first number: 7
+      // Enter the second number: 7
+      // Expected Output (via alert):
+      // "Equal"
+      var num1 = +prompt("Enter the first number:");
+      var num2 = +prompt("Enter the second number:");
+
+      if (num1 > num2) {
+        alert("Greater");
+        // alert(`${num1} is greater than num2`);
+      } else if (num1 == num2) {
+        alert("Equal");
+        // alert(`${num1} is equals to ${num2}`)
+      } else {
+        alert("Smaller");
+      }
+      //   else if(num1<num2){
+      //         alert(`${num2} is smaller than num1`)
+      //     }
+      //     else{
+      //         alert("Invalid input")
+      //     }
+      // Output: -
+      // Enter the first number: 10
+      // Enter the second number: 5
+      // "Greater"
+      // 10 is greater than 5
+      // Enter the first number: 7
+      // Enter the second number: 7
+      // "Equal"
+      // 2 is equals to 2
+      // 6 is smaller than 3
+
+      // 3. Driving Eligibility Check
+      // Question:
+      // Write a JavaScript program that prompts the user to enter their age and whether they have a valid driver's license (true or false). The program should alert "Can drive" if the person is 18 or older and has a valid driver's license, otherwise it should alert "Cannot drive."
+      // Input (via prompt):
+      // Enter your age: 20
+      // Do you have a valid driver's license (true/false): true
+      // Expected Output (via alert):
+      // "Can drive"
+      // Input (via prompt):
+      // Enter your age: 16
+      // Do you have a valid driver's license (true/false): true
+      // Expected Output (via alert):
+      // "Cannot drive"
+      var age = +prompt("Enter your age:");
+      var license = prompt(
+        "Do you have a valid driver's license (true/false):"
+      );
+
+      if (age >= 18 && license === "true") {
+        alert("Can drive");
+      } else {
+        alert("Cannot drive");
+      }
+      // Output: -
+      // Enter your age: 20
+      // Do you have a valid driver's license (true/false): true
+      // Can drive
+      // Enter your age:16
+      // Do you have a valid driver's license (true/false): true
+      // Cannot drive
+
+      //   4. Determine if a Number is Positive, Negative, or Zero
+      //   Question:
+      //   Write a JavaScript program that prompts the user to enter a number and alerts "Positive" if the number is greater than 0, "Negative" if the number is less than 0, or "Zero" if the number is 0.
+      //   Input (via prompt):
+      //   Enter a number: 5
+      //   Expected Output (via alert):
+      //   "Positive"
+      //   Input (via prompt):
+      //   Enter a number: -3
+      //   Expected Output (via alert):
+      //   "Negative"
+      //   Input (via prompt):
+      //   Enter a number: 0
+      //   Expected Output (via alert):
+      //   "Zero"
+      var num = +prompt("Enter a number: ");
+
+      if (num > 0) {
+        alert("Positive");
+      } else if (num < 0) {
+        alert("Negative");
+      } else {
+        alert("Zero");
+      }
+      // Output: -
+      // Enter a number: 5
+      // Positive
+      // Enter a number: -3
+      // Negative
+      // Enter a number: 0
+      // Zero
+    </script>
+  </body>
+</html>

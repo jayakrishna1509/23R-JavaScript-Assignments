@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions in JS</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1FFzPsb9f66u4gLT1N7v3p61XM5UAvCoz/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+      <div class="code-section">
+        <h2>Functions in JavaScript</h2>
+        <div class="code-block">
+          <pre class="code">
+<span class="input">
+1.write a function to check whether input num is even or odd.
+var num = 15; // 15 is odd
+// var num = 24; // 24 is even
+function checkEvenOdd(num) {
+  if (num % 2 == 0) {
+    console.log("even");
+  } else {
+    console.log("odd");
+  }
+}
+checkEvenOdd(num);
+</span>
+<span class="comment">A:Output:
+15 is odd</span>
+
+<span class="input">
+2.write a function to check whether input string is palindrome or not.
+// var str = "mom"; //palindrome
+var str = "hollywood"; // not a palindrome
+    function palindrome(str1) {
+      var str2 = "";
+      for (i = str1.length - 1; i >= 0; i--) {
+        str2 += str1[i];
+      }
+      if (str2 == str1) {
+        console.log("palindrome");
+      } else {
+        console.log("not a palindrome");
+      }
+    }
+palindrome(str);
+</span>
+<span class="comment">A:Output:
+not a palindrome</span>
+
+<span class="input">
+3.write a function to check the largest number among three numbers.
+var n1 = 6;
+var n2 = 46;
+var n3 = 138; // 138 is largest number than 6 and 46
+function largestNumber(n1, n2, n3) {
+      if (n1 > n2 && n1 > n3) {
+        console.log(`${n1} is largest number than ${n2} and ${n3}`);
+      } else if (n2 > n1 && n2 > n3) {
+        console.log(`${n2} is largest number than ${n1} and ${n3}`);
+       } else {
+        console.log(`${n3} is largest number than ${n1} and ${n2}`);
+    }
+}
+largestNumber(n1, n2, n3);
+</span>
+<span class="comment">A:Output:
+138 is largest number than 6 and 46</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

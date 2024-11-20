@@ -1,0 +1,134 @@
+<!-- create an id card using dom in JavaScript -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID Card DOM in JS</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="c1">
+      <img src="./images/logo.png" alt="Logo" />
+      <div>
+        <img class="image" src="./images/profile.png" alt="Profile Picture" />
+        <p class="h1">PILLAGOLLA JAYAKRISHNA</p>
+        <h3>Developer</h3>
+      </div>
+
+      <div class="info">
+        <p class="info"><em class="bio">ID:</em> <span id="idNo">8855</span></p>
+        <p class="info">
+          <em class="bio">DOB : </em><span id="dob">15-09-2000</span>
+        </p>
+        <p class="info">
+          <em class="bio">EMAIL :</em>
+          <span id="email">jayakrishna@gmail.com</span>
+        </p>
+        <p class="info">
+          <em class="bio">PHONE NO :</em> <span id="phoneNo">9999988888</span>
+        </p>
+        <p class="info">
+          <em class="bio">INSTITUTE :</em>
+          <span id="institute">10000 Coders</span>
+        </p>
+        <p id="address">KPHB Colony, Hyderabad, Telangana, India</p>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.body.style.margin = "0";
+        document.body.style.padding = "0";
+        document.body.style.minHeight = "100vh";
+        document.body.style.display = "flex";
+        document.body.style.justifyContent = "center";
+        document.body.style.alignItems = "center";
+        document.body.style.backgroundColor = "white";
+
+        let x = document.getElementById("c1");
+        x.style.backgroundImage = "url(./images/bg.jpg)";
+        x.style.border = "2px solid #333";
+        x.style.borderRadius = "10px";
+        x.style.height = "540px";
+        x.style.width = "326px";
+        x.style.textAlign = "center";
+        x.style.position = "relative";
+        x.style.overflow = "hidden";
+        x.style.fontFamily = "Arial, sans-serif";
+        x.style.color = "black";
+        x.style.margin = "20px auto";
+
+        let pic = document.getElementsByTagName("img");
+        pic[0].style.height = "50px";
+        pic[0].style.marginTop = "105px";
+
+        let img = document.getElementsByClassName("image");
+        img[0].style.border = "3px solid black";
+        img[0].style.height = "70px";
+        img[0].style.width = "70px";
+        img[0].style.borderRadius = "50%";
+        img[0].style.objectFit = "cover";
+        img[0].style.marginTop = "20px";
+
+        let y = document.getElementsByClassName("h1");
+        y[0].style.fontSize = "1.25rem";
+        y[0].style.fontWeight = "bold";
+        y[0].style.margin = "10px 0 5px";
+
+        let h = document.getElementsByTagName("h3");
+        h[0].style.fontSize = "1rem";
+        h[0].style.fontWeight = "normal";
+        h[0].style.color = "black";
+        h[0].style.margin = "5px 0";
+
+        let ip = document.getElementsByClassName("info");
+        ip[0].style.fontSize = "0.875rem";
+        ip[0].style.textAlign = "left";
+        ip[0].style.margin = "10px 20px";
+        ip[0].style.padding = "8px";
+        ip[0].style.borderRadius = "5px";
+
+        let bi = document.getElementsByClassName("bio");
+        for (let i = 0; i < bi.length; i++) {
+          bi[i].style.fontWeight = "700";
+          bi[i].style.fontStyle = "normal";
+          bi[i].style.color = "#333";
+        }
+
+        let address = document.getElementById("address");
+        address.style.display = "block";
+        address.style.marginTop = "-25px";
+        address.style.padding = "5px 1px";
+        address.style.backgroundColor = "#e2e1e1";
+        address.style.fontSize = "0.8rem";
+        address.style.fontWeight = "bold";
+        address.style.color = "black";
+        address.style.textAlign = "center";
+        address.style.width = "calc(100% - 20px)";
+        address.style.position = "absolute";
+        address.style.bottom = "1px";
+        address.style.left = "10px";
+
+        const handleResize = () => {
+          if (window.innerWidth < 360) {
+            x.style.width = "calc(100% - 40px)";
+            x.style.height = "auto";
+            x.style.padding = "10px";
+            x.style.margin = "20px";
+            img[0].style.height = "60px";
+            img[0].style.width = "60px";
+          } else {
+            x.style.width = "326px";
+            x.style.height = "540px";
+            x.style.padding = "0";
+            x.style.margin = "20px auto";
+            im[0].style.height = "70px";
+            im[0].style.width = "70px";
+          }
+        };
+        handleResize();
+      });
+    </script>
+  </body>
+</html>

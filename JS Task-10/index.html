@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terinary Operator for loop in JS</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1bE8zQ_kmNThSfRKqfo6_j5IUE6UxviF5/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+      <div class="code-section">
+        <h2>Terinary Operator for loop in JavaScript</h2>
+        <div class="code-block">
+          <pre class="code">
+<span class="input">Problem 1
+    Given a variable score, use a ternary operator to determine the
+    performance level:
+    • "Excellent" if score is 90 or above,
+    • "Good" if score is between 60 and 89,
+    • "Needs Improvement" if score is below 60.
+    Test Cases:
+    1. Input: score = 95
+    Expected Output: "Excellent"
+    2. Input: score = 75
+    Expected Output: "Good"
+    3. Input: score = 50
+    Expected Output: "Needs Improvement"
+    var score = 50; //Needs Improvement
+    // var score = 75; //Good
+    // var score = 95; //Excellent
+    score >= 90
+    ? console.log("Excellent")
+    : score >= 60 && score < 89
+    ? console.log("Good")
+    : console.log ("Needs Improvement");
+</span>
+<span class="comment">A:Output:
+Needs Improvement</span>
+
+<span class="input">Problem 2
+Given a variable day, use a ternary operator to check if it's a weekend:
+• "Weekend" if day is "Saturday" or "Sunday",
+• "Weekday" for any other day.
+Test Cases:
+1. Input: day = "Saturday"
+Expected Output: "Weekend"
+2. Input: day = "Monday"
+Expected Output: "Weekday"
+3. Input: day = "Sunday"
+Expected Output: "Weekend"
+A)var day = "Monday"; //Weekday
+day == "Saturday" || day == "Sunday"
+? console.log("Weekend")
+: console.log("Weekday");
+</span>
+<span class="comment">A:Output:
+Weekday</span>
+
+<span class="input">Problem 3
+    Given a string inputString, use the ternary operator to check if it is a
+    palindrome. A string is considered a palindrome if it reads the same
+    forwards and backwards.
+    • Output: "Palindrome" if the string is a palindrome,
+    • "Not a Palindrome" otherwise.
+    
+    Test Cases:
+    1. Input: inputString = "madam"
+    Expected Output: "Palindrome"
+    2. Input: inputString = "hello"
+    Expected Output: "Not a Palindrome"
+    3. Input: inputString = "racecar"
+    Expected Output: "Palindrome"
+    4. Input: inputString = "world"
+    Expected Output: "Not a Palindrome"
+    var str = "madam"; //Palindrome
+    var isPalindrome =
+    str === str.split("").reverse().join("") ? "Palindrome": "Not a
+    palindrome";
+    console.log(isPalindrome);
+</span>
+<span class="comment">A:Output:
+Palindrome</span>
+
+<span class="input">Problem 4
+    Input: HELLO
+    Output:
+    H
+    HE
+    HEL
+    HELL
+    HELLO
+    var str = "HELLO";
+    var output = "";
+    for (i = 0; i <= str.length - 1; i++) {
+    output += str[i];
+    console.log(output);
+    }
+</span>
+<span class="comment">A:Output:
+H
+HE
+HEL
+HELL
+HELLO</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methods in Strings JS</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .method-heading {
+        color: #4da6ff;
+        margin: 20px 0 10px 0;
+        padding-top: 20px;
+        border-top: 1px solid #4da6ff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1-kK8E8OUHOM8PoAXKetYApM1PTmHTOLQ/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+      <div class="code-section">
+        <h2>String Methods in JS</h2>
+        <div class="code-block">
+          // write a code to get like below using
+          <pre class="code">
+<h3 class="method-heading">// join method: -</h3>
+<span class="input">1. var fruits = ["Apple", "Banana", "Orange"];
+   console.log(fruits.join(", "));</span>
+<span class="comment">Output: "Apple, Banana, Orange"</span>
+
+<span class="input">2. var numbers = [1, 2, 3, 4, 5];
+   console.log(numbers.join("-"));</span>
+<span class="comment">Output: "1-2-3-4-5"</span>
+
+<span class="input">3. var chars = ["H", "e", "l", "l", "o"];
+   console.log(chars.join(""));</span>
+<span class="comment">Output: "Hello"</span>
+
+<h3 class="method-heading">// slice method: -</h3>
+<span class="input">4. var text = "JavaScript is awesome";
+   console.log(text.slice(0, 10));</span>
+<span class="comment">Output: "JavaScript"</span>
+
+<span class="input">5. var sentence = "I love learning JavaScript!";
+   console.log(sentence.slice(7, 15));</span>
+<span class="comment">Output: "learning"</span>
+
+<span class="input">6. var text = "Frontend Development";
+   console.log(text.slice(-11));</span>
+<span class="comment">Output: "Development"</span>
+
+<h3 class="method-heading">// split method: -</h3>
+<span class="input">7. var date = "2024-10-21";
+   console.log(date.split("-"));</span>
+<span class="comment">Output: ["2024", "10", "21"]</span>
+
+<span class="input">8. var text = "I love JavaScript programming";
+   console.log(text.split(" ").slice(0, 2));</span>
+<span class="comment">Output: ["I", "love"]</span>
+
+<span class="input">9. let url = "https//www.example.com/path/page.html";
+   console.log(url.split("/"));</span>
+<span class="comment">Output: ["https", "", "www.example.com", "path", "page.html"]</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

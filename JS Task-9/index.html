@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Statement Logical Operators in JS</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: #d4d4d4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+      .js-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+      }
+      .js-logo span {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .explanation-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .explanation-btn:hover {
+        transform: scale(1.2);
+        background-color: #f7df1e;
+        color: #000;
+      }
+      .code-section {
+        background-color: #2d2d2d;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .code-block {
+        margin-bottom: 20px;
+      }
+      .code {
+        font-family: "Courier New", Courier, monospace;
+        color: #d4d4d4;
+      }
+      .input {
+        color: #9cdcfe;
+      }
+      .comment {
+        color: #6a9955;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        .js-logo {
+          width: 80px;
+          height: 80px;
+        }
+        .js-logo span {
+          font-size: 36px;
+        }
+        .explanation-btn {
+          width: 100%;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .code-section {
+          padding: 15px;
+        }
+        .code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="js-logo">
+        <span>JS</span>
+      </div>
+      <h1>JavaScript</h1>
+      <p style="text-align: center">Check Console for Output</p>
+      <a
+        href="https://drive.google.com/file/d/1YRaPYXmVakCWlDoIbyqSFNl4MEQHQp-Y/view?usp=sharing"
+        target="_blank"
+        class="explanation-btn"
+        >For Explanation Click Here</a
+      >
+      <div class="code-section">
+        <h2>Switch Statement Logical Operators in JavaScript</h2>
+        <div class="code-block">
+          <pre class="code">
+<span class="input">Question 1: Voting Eligibility
+    Scenario: Determine if a person is eligible to vote.
+    Inputs:
+    • age
+    • citizenship (boolean)
+    Outputs:
+    • canVote
+    Algorithm:
+    1. Check if the age of the person is 18 or older.
+    2. Check if the person has citizenship.
+    3. If both conditions are true, print canVote.
+    4. Otherwise, print cannotVote.
+    Example:
+    • Input: age = 20, citizenship = true
+    • Output: canVote
+    var age = 20; //canVote
+var citizenship = true;
+if (age >= 18 && citizenship == true) {
+console.log("canVote");
+} else {
+console.log("cannotVote");
+}
+</span>
+<span class="comment">A:Output:
+canVote</span>
+
+<span class="input">Question 2: Admission to a Club
+    Scenario: Determine if a person can enter a club.
+    Inputs:
+    • age
+    • hasInvitation (boolean)
+    Outputs:
+    • canEnterClub
+    Algorithm:
+    1. Check if the age of the person is 21 or older.
+    2. Check if the person has an invitation.
+    3. If either condition is true, print canEnterClub.
+    4. Otherwise, print cannotEnterClub.
+    Example:
+    • Input: age = 20, hasInvitation = true
+    • Output: canEnterClub
+    var age=20;
+    var hasInvitation=true;
+    if(age>=21||hasInvitation==true)
+    {
+    console.log("canEnterClub");
+    }
+    else{
+    console.log("cannotEnterClub");
+    }
+</span>
+<span class="comment">A:Output:
+canEnterClub</span>
+
+<span class="input">Question 3: Discount Eligibility
+    Scenario: Determine if a person is eligible for a discount at a store.
+    Inputs:
+    • isMember (boolean)
+    • age
+    Outputs:
+    • isEligibleForDiscount
+    Algorithm:
+    1. Check if the person is a member.
+    2. Check if the person is a senior (65 years old or older).
+    3. If either condition is true, print isEligibleForDiscount.
+    4. Otherwise, set isNotEligibleForDiscount.
+    Example:
+    • Input: isMember = false, age = 70
+    • Output: isEligibleForDiscount
+    var isMember=false;
+    var age=70;
+    if(age>=65||isMember==true)
+    {
+    console.log("isEligibleForDiscount");
+    }
+    else{
+    console.log("isNotEligibleForDiscount");
+    }
+</span>
+<span class="comment">A:Output:
+isEligibleForDiscount</span>
+
+<span class="input">Question 4: Scholarship Eligibility
+    Scenario: Determine if a student is eligible for a scholarship.
+    Inputs:
+    • gpa
+    • extracurriculars (boolean)
+    • recommendation (boolean)
+    Outputs:
+    • isEligibleForScholarship (boolean)
+    Algorithm:
+    1. Check if the GPA of the student is 3.5 or higher.
+    2. Check if the student participates in extracurricular activities.
+    3. Check if the student has a recommendation letter.
+    4. If the GPA is 3.5 or higher AND either participation in extracurricular 
+    activities or a recommendation letter is true, print 
+    isEligibleForScholarship.
+    5. Otherwise, set isNotEligibleForScholarship.
+    Example:
+    • Input: gpa = 3.6, extracurriculars = true, recommendation = false
+    • Output: isEligibleForScholarship
+    var gpa = 3.6;
+var extracurriculars = true; var recommendation = false;
+if (gpa >= 3.5 && extracurriculars==true || recommendation==true) {
+console.log("isEligibleForScholarship"); }
+else {
+console.log("isNotEligibleForScholarship");
+}
+</span>
+<span class="comment">A:Output:
+isEligibleForScholarship</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
