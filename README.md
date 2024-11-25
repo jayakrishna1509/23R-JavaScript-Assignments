@@ -29,3 +29,5 @@
 * Assignment-13: Create an id card using dom in JavaScript.
 
 * Assignment-14: Arrays in JavaScript.
+
+* Assignment-15: Eval method in JavaScript Calculator using DOM.
