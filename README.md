@@ -31,3 +31,7 @@
 * Assignment-14: Arrays in JavaScript.
 
 * Assignment-15: Eval method in JavaScript Calculator using DOM.
+
+* Assignment-16: Add a delete button for each todo in JavaScript using DOM.
+
+* Assignment-17: Implement the delete button with the confirm method and the edit button in the to-do list using DOM.
