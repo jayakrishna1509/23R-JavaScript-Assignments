@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: orange;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 400px;
+        background: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        width: 78%;
+        flex-grow: 1;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        padding: 8px 18px;
+        font-size: 16px;
+        border: none;
+        background-color: #1c7d06;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 10px;
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      ul li button {
+        padding: 8px 15px;
+        font-size: 16px;
+        border: none;
+        background-color: #dc3545;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To Do List</h1>
+      <form id="frm">
+        <input type="text" id="ip" placeholder="Add New Task" />
+        <input type="submit" value="Add" />
+      </form>
+      <ul id="list"></ul>
+    </div>
+    <script>
+      let form = document.getElementById("frm");
+      let ip = document.getElementById("ip");
+      let list = document.getElementById("list");
+
+      form.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        if (ip.value.trim() === "") return;
+
+        let listItem = document.createElement("li");
+        let textSpan = document.createElement("span");
+        textSpan.innerText = ip.value;
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+
+        deleteBtn.addEventListener("click", () => {
+          let confirmDelete = window.confirm("Are you sure delete this task?");
+          if (confirmDelete) {
+            list.removeChild(listItem);
+          }
+        });
+
+        listItem.appendChild(textSpan);
+        listItem.appendChild(deleteBtn);
+        list.appendChild(listItem);
+        ip.value = "";
+      });
+    </script>
+  </body>
+</html>
