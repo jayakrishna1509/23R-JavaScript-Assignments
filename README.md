@@ -26,7 +26,7 @@
 
 * Assignment-12: Functions in JavaScript.
 
-* Assignment-13: Create an id card using dom in JavaScript.
+* Assignment-13: Create an ID card using dom in JavaScript.
 
 * Assignment-14: Arrays in JavaScript.
 
@@ -35,3 +35,13 @@
 * Assignment-16: Add a delete button for each todo in JavaScript using DOM.
 
 * Assignment-17: BOM Introduction in JavaScript.
+
+* Assignment-18: Create a cards using fake store data API.
+
+* Assignment-19: Create some feature using a set timeout or set interval.
+
+* Assignment-20: Create a form by using a Regex Expression.
+
+* Assignment-21: Simulate a pizza delivery system with steps: Place order → Prepare pizza → Bake pizza → Pack pizza → Deliver pizza.
+
+* Assignment-22: Create a cards using fake store data by fetch API.
