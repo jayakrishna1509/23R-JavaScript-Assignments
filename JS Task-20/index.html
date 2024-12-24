@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Form with Validation</title>
+    <link rel="icon" href="./images/icon.png" type="image/x-icon" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      input:focus {
+        border-color: #4641e9;
+        outline: none;
+      }
+
+      span {
+        font-size: 12px;
+        color: red;
+        display: none;
+        margin-bottom: 10px;
+      }
+
+      .success-message {
+        font-size: 16px;
+        color: green;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 16px;
+        background-color: #0828f4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <marquee behavior="" direction=""
+      ><h1>User Form using Regex Expression</h1></marquee
+    >
+    <div class="container">
+      <h1>User Form</h1>
+      <form action="#" id="form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter Your Full Name" />
+        <span id="nameValidationError"></span>
+
+        <label for="Mobilenumber">Mobile Number</label>
+        <input
+          type="tel"
+          id="Mobilenumber"
+          placeholder="Enter Your Mobile Number"
+        />
+        <span id="numValidationError"></span>
+
+        <label for="DOB">DOB</label>
+        <input type="text" id="DOB" placeholder="DD-MM-YYYY" />
+        <span id="DOBValidationError"></span>
+
+        <label for="Email">Email</label>
+        <input type="email" id="Email" placeholder="Enter Your Email" />
+        <span id="EmailValidationError"></span>
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Your Password"
+        />
+        <span id="passwordValidationError"></span>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="success-message" id="success-message"></div>
+    </div>
+
+    <script>
+      let form = document.getElementById("form");
+      let Fullname = document.getElementById("name");
+      let nameValidationError = document.getElementById("nameValidationError");
+      let namepattern = /^[A-Za-z\s]+$/; // Validate only letters and spaces
+
+      let Mobilenumber = document.getElementById("Mobilenumber");
+      let numValidationError = document.getElementById("numValidationError");
+      let numberpattern = /^[6-9]{1}[0-9]{9}$/; // Mobile number pattern (starts with 6-9 and 10 digits)
+
+      let DOB = document.getElementById("DOB");
+      let DOBValidationError = document.getElementById("DOBValidationError");
+      let DOB_pattern = /\d{2}-\d{2}-\d{4}/; // DOB format (DD-MM-YYYY)
+
+      let Email = document.getElementById("Email");
+      let EmailValidationError = document.getElementById(
+        "EmailValidationError"
+      );
+      let Email_pattern = /[\w._]+@[a-z]+\.[a-z]{2,3}/; // Email pattern
+
+      let password = document.getElementById("password");
+      let passwordValidationError = document.getElementById(
+        "passwordValidationError"
+      );
+      let password_pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Password pattern (min 8 chars, letters and digits)
+
+      let successMessageDiv = document.getElementById("success-message");
+
+      Fullname.addEventListener("input", (e) => {
+        const isValid = namepattern.test(e.target.value);
+        if (!isValid) {
+          nameValidationError.style.display = "block";
+          nameValidationError.innerHTML = "Enter valid name.";
+        } else {
+          nameValidationError.style.display = "none";
+        }
+      });
+
+      Mobilenumber.addEventListener("input", (e) => {
+        const numberValid = numberpattern.test(e.target.value);
+        if (!numberValid) {
+          numValidationError.style.display = "block";
+          numValidationError.innerHTML = "Enter valid mobile number.";
+        } else {
+          numValidationError.style.display = "none";
+        }
+      });
+
+      DOB.addEventListener("input", (e) => {
+        const DOBValid = DOB_pattern.test(e.target.value);
+        if (!DOBValid) {
+          DOBValidationError.style.display = "block";
+          DOBValidationError.innerHTML = "Enter valid DOB format.";
+        } else {
+          DOBValidationError.style.display = "none";
+        }
+      });
+
+      Email.addEventListener("input", (e) => {
+        const emailValid = Email_pattern.test(e.target.value);
+        if (!emailValid) {
+          EmailValidationError.style.display = "block";
+          EmailValidationError.innerHTML = "Enter valid email address.";
+        } else {
+          EmailValidationError.style.display = "none";
+        }
+      });
+
+      password.addEventListener("input", (e) => {
+        if (!password_pattern.test(e.target.value)) {
+          passwordValidationError.style.display = "block";
+          passwordValidationError.innerHTML =
+            // "Password must be at least 8 characters long and contain letters and digits.";
+            "Enter valid password at least 8 characters.";
+        } else {
+          passwordValidationError.style.display = "none";
+        }
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        nameValidationError.style.display = "none";
+        numValidationError.style.display = "none";
+        DOBValidationError.style.display = "none";
+        EmailValidationError.style.display = "none";
+        passwordValidationError.style.display = "none";
+        successMessageDiv.innerHTML = "";
+
+        if (!namepattern.test(Fullname.value)) {
+          isValid = false;
+          nameValidationError.style.display = "block";
+          nameValidationError.innerHTML = "Full name should be valid.";
+        }
+
+        if (!numberpattern.test(Mobilenumber.value)) {
+          isValid = false;
+          numValidationError.style.display = "block";
+          numValidationError.innerHTML =
+            "Mobile number should be valid (starts with 6-9, 10 digits).";
+        }
+
+        if (!DOB_pattern.test(DOB.value)) {
+          isValid = false;
+          DOBValidationError.style.display = "block";
+          DOBValidationError.innerHTML = "DOB must be valid (DD-MM-YYYY).";
+        }
+
+        if (!Email_pattern.test(Email.value)) {
+          isValid = false;
+          EmailValidationError.style.display = "block";
+          EmailValidationError.innerHTML = "Email should be valid.";
+        }
+
+        if (!password_pattern.test(password.value)) {
+          isValid = false;
+          passwordValidationError.style.display = "block";
+          passwordValidationError.innerHTML =
+            "Password must meet the criteria.";
+        }
+
+        if (isValid) {
+          const queryParams = new URLSearchParams({
+            fullName: Fullname.value,
+            password: password.value,
+          }).toString();
+
+          window.history.pushState({}, "", "?" + queryParams);
+
+          successMessageDiv.innerHTML = "Form submitted successfully!";
+        }
+      });
+    </script>
+  </body>
+</html>
