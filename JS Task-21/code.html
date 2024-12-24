@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Order Process</title>
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #1a1a2e;
+        color: #ffffff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .steps-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      .step {
+        flex: 1;
+        background-color: #16213e;
+        border-radius: 10px;
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 255, 255, 0.3);
+      }
+      .step.active {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+      }
+      .step img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        transition: box-shadow 0.3s ease;
+      }
+      .step.active img {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+      }
+      .step p {
+        padding: 1rem;
+        margin: 0;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #orderBtn {
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        background-color: #0f3460;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #orderBtn:hover {
+        background-color: #16213e;
+      }
+      #orderBtn:disabled {
+        background-color: #666;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pizza Order Process</h1>
+      <div class="steps-container">
+        <div id="step1" class="step">
+          <img src="./images/order-pizza.jpg" alt="Order Placed" />
+          <p>Place Order</p>
+        </div>
+        <div id="step2" class="step">
+          <img src="./images/prepare-pizza.jpg" alt="Preparing" />
+          <p>Preparing</p>
+        </div>
+        <div id="step3" class="step">
+          <img src="./images/bake-pizza.jpeg" alt="Baking" />
+          <p>Baking</p>
+        </div>
+        <div id="step4" class="step">
+          <img src="./images/pack-pizza.jpeg" alt="Packing" />
+          <p>Packing</p>
+        </div>
+        <div id="step5" class="step">
+          <img src="./images/deliver-pizza.jpg" alt="Delivery" />
+          <p>Delivery</p>
+        </div>
+      </div>
+      <button id="orderBtn">Start Order</button>
+    </div>
+
+    <script>
+      const steps = document.querySelectorAll(".step");
+      const orderBtn = document.getElementById("orderBtn");
+      let currentStep = -1;
+      let orderCount = 0;
+
+      function showAllSteps() {
+        steps.forEach((step) => step.classList.add("active"));
+      }
+
+      function hideAllSteps() {
+        steps.forEach((step) => step.classList.remove("active"));
+      }
+
+      function highlightStep(index) {
+        steps.forEach((step, i) => {
+          if (i === index) {
+            step.style.transform = "scale(1.05)";
+            step.style.boxShadow = "0 0 20px rgba(0, 255, 255, 0.7)";
+            console.log(
+              `Processing: ${step.querySelector("p").textContent} step`
+            );
+          } else {
+            step.style.transform = "scale(1)";
+            step.style.boxShadow = "0 4px 6px rgba(0, 255, 255, 0.3)";
+          }
+        });
+      }
+
+      function startOrderProcess() {
+        orderCount++;
+        console.log(`Order #${orderCount} Started`);
+
+        orderBtn.disabled = true;
+        orderBtn.textContent = "Processing";
+        showAllSteps();
+        currentStep = 0;
+
+        function processStep() {
+          if (currentStep < steps.length) {
+            highlightStep(currentStep);
+            currentStep++;
+            setTimeout(processStep, 2000);
+          } else {
+            setTimeout(() => {
+              hideAllSteps();
+              orderBtn.disabled = false;
+              orderBtn.textContent = "Order Again";
+              console.log(`Order #${orderCount} Completed`);
+            }, 2000);
+          }
+        }
+
+        processStep();
+      }
+
+      orderBtn.addEventListener("click", startOrderProcess);
+    </script>
+  </body>
+</html>
